@@ -1,0 +1,14 @@
+from selenium import webdriver
+from sensitiveInfo import *
+
+driver = webdriver.Chrome('chromedriver.exe')
+driver.get('https://www.facebook.com')
+
+email_input = driver.find_element_by_id('email')
+email_input.send_keys(EMAIL)
+
+psd_input = driver.find_element_by_id('pass')
+psd_input.send_keys(PASSWORD)
+
+login_btn = driver.find_element_by_id('u_0_2')
+login_btn.click()
